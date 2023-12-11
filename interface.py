@@ -29,13 +29,13 @@ def start():
     # Internet connection warning
     input("""\n-----------------------------------------------------------
 Welcome to CrisprLib, a comprehensive tool for performing CRISPR-related tasks.
-    This program may require Internet connection.
+    This program may require internet connection.
     Please make sure you are connected to the Internet before proceeding.
     If you wish to quit the program, please press control+D simultaneously.
-    Otherwise, press enter to continue""")
+    Otherwise, press enter to continue.""")
 
     # Choose CRISPR system
-    chosen_system = input("""\n
+    chosen_system = input("""
     Please choose a supported CRISPR system you would like to use:
     1) SpCas9 (Streptococcus pyogenes)
     2) SaCas9 (Streptococcus aureus)
@@ -161,17 +161,31 @@ def export_grnas():
 
 def export_primers():
     """
-    Get a file name for exported primers.
+    Ask user if they want a copy of primer sequences.
 
     Returns:
+    response (str): Whether the user would like a copy of primers.
     primer_name (str): The file name for exported primers.
     """
-    print('\nA file with required primers will be exported.')
+    response = input('\nWould you like to receive a copy of primers generated for you? Please enter yes or no.\n')
+    while True:
+        try:
+            response = response.upper()
+            if response == 'YES' or response == 'NO':
+                break
+            response = input('\nPlease enter yes if you want to receive a copy of primers or enter no otherwise.\n')
+        except:
+            response = input('\nPlease enter yes if you want to receive a copy of primers or enter no otherwise.\n')
+    
+    if response == 'NO':
+        return response, None
+    # Choose name of output file
+    print('\nThe file will be exported to your previously selected folder.')
     primer_name = input("Please enter a name for the output file (without the extension):\n")
     while not primer_name.strip():
         primer_name = input("Name cannot be empty. Please enter a name for the output file (without the extension):\n")
-    return primer_name
-
+    return response, primer_name
+    
 def export_cf():
     """
     Get a file name for exported construction files.

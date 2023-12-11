@@ -81,30 +81,38 @@ while True:
         print('Generation complete!')
         
         # Output gRNA list upon request
-        response, grna_name = export_grnas()
-        if response == 'YES':  # Generate a list of gRNAs
+        grna_response, grna_name = export_grnas()
+        if grna_response == 'YES':  # Generate a list of gRNAs
             exported_grnas = [' '.join(str(g) for g in gene_gRNAs) for gene_gRNAs in grnas]
             num_columns = len(max(exported_grnas, key=len).split())  # Get the maximum number of gRNAs in a gene
+
+            # Prepare a dictionary to hold the new columns
+            new_columns = {}
             for i in range(num_columns):
-                df[f'gRNA {i + 1}'] = [gRNAs.split()[i] if len(gRNAs.split()) > i else '' for gRNAs in exported_grnas]
+                new_columns[f'gRNA {i + 1}'] = [gRNAs.split()[i] if len(gRNAs.split()) > i else '' for gRNAs in exported_grnas]
+
+            # Create a new DataFrame from the new columns
+            new_df = pd.DataFrame(new_columns)
+
+            # Concatenate the new DataFrame with the original one
+            df = pd.concat([df, new_df], axis=1)
+
             df.to_csv(f'{export_file_path}/{grna_name}.csv', index=False)
             print('\ngRNAs have been saved to your specified destination.')
         
-        # Output primer file
-        primer_name = export_primers()
-        primer_df = pd.DataFrame({
-            'Primer Name': primer_names,
-            'Primer Sequence': primer_sequences
-        })
-        primer_df.to_csv(f'{export_file_path}/{primer_name}.csv', index=False)
-        print('\nPrimers have been saved to your specified destination.')
-
+        # Output primer list upon request
+        primer_response, primer_name = export_primers()
+        if primer_response == 'YES':  # Generate a list of primers
+            primer_df = pd.DataFrame({'Primer Name': primer_names, 'Primer Sequence': primer_sequences})
+            primer_df.to_csv(f'{export_file_path}/{primer_name}.csv', index=False)
+            print('\nPrimers have been saved to your specified destination.')
+        
         # Generate construction files
         cf_name = export_cf()
         print('\nGenerating construction files...')
         output_CF(primer_names, primer_sequences, pcr_product, f'{export_file_path}/{cf_name}')
         print('Your files have been successfully exported. Thank you for using the program.\n')
-        sys.exit(0)
+        break
 
     except (KeyboardInterrupt, EOFError):
         # Handle Ctrl+C and Ctrl+D
@@ -122,10 +130,12 @@ Otherwise, press control+D simultaneously to quit the program.""")
             print("\nYou have successfully quitted. Thank you for using the program.\n")
             sys.exit(0)
     
+    '''
     except:
         # Handle crashes
-        print("""\n***********************************************\n
+        print("""\n************************************************************************
 The program crashed due to an unexpected error. Apologies for your inconvenience.
 If you wish to report the bug, please contact czhangyx@berkeley.edu.
-***********************************************\n""")
+************************************************************************n""")
         sys.exit(0)
+    '''

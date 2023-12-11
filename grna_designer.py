@@ -61,7 +61,7 @@ LbCas12a = {'pam': ['TTTA', 'TTTC', 'TTTG'],
 LshCas13a = {'spacer_length': 24,
             'scaffold': 'GTTTTAGAGCTAGAAATAGCAAGTTAAAATAAGGCTAGTCCGTTATCAACTTGAAAAAGTGGCACCGAGTCGGTG'}
 LwCas13a = {'spacer_length': 28,
-            'scaffold': 'GGGGAUUUAGACUACCCCAAAAACGAAGGGGACUAAAAC'}
+            'scaffold': 'GGGGATTTAGACTACCCCAAAAACGAAGGGGACTAAAAC'}
 SYSTEM_TO_CAS = {'1': SpCas9, '2': SaCas9, '3': FnCas12a, '4': LbCas12a, '5': LshCas13a, '6': LwCas13a}
 
 def generate_gRNA_from_seq(gene, system, num):
