@@ -48,7 +48,7 @@ while True:
                     if check_internet_connection():
                         internet_checked = True
                     else:
-                        print('Failed to connect to the Internet. Please make sure you are connected to the Internet before proceeding.')
+                        print('Failed to connect to the Internet. Please make sure you are connected before proceeding.')
                         sys.exit(0)
                 chromosome, begin, end = invalid_coordinate(gene_data, chosen_genome)
                 if chromosome[:3] != 'chr':  # Coordinate is invalid

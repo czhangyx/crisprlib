@@ -1,7 +1,7 @@
-# CrisprLib, a comprehensive tool for generating lab guidelines for CRISPR projects.
+# CrisprLib, a tool for generating human and machine-readable lab specifications for CRISPR projects.
 
 ## Usage
-This program generates gRNAs, appropriate primers, and experiment procedures for CRISPR-related projects. The program prompts user for the CRISPR/Cas systems, genome, and experiment. Upon request, the program outputs a table of gRNA sequences in the selected destination folder. The program then outputs a table of primers required to execute experiments, as well as human-readable and json [construction files](https://doi.org/10.1101/2023.06.28.546630).
+This program generates gRNAs, appropriate primers, and experiment procedures for CRISPR-related projects. The program prompts user for a CRISPR/Cas systems, genome, and experiment. Upon request, the program outputs a table of gRNA sequences in the selected destination folder. The program then outputs a table of primers required to execute experiments, as well as human-readable .txt and machine-readable .json [construction files](https://doi.org/10.1101/2023.06.28.546630) for molecular biology experiment automation.
 
 To execute the program, navigate to the crisprlib directory on your terminal and enter ```python crisprlib.py```.
 You can then follow the instructions in the program.
@@ -21,7 +21,7 @@ You can then follow the instructions in the program.
 
 ## Dependencies
 This program require NumPy and Pandas. Both packages can be installed via pip.
-The program may require Internet connection if the input data contains genomic coordinates.
+The program may require internet connection if the input data contains genomic coordinates.
 The construction file outlines a set of experiments based on [this plasmid](https://www.addgene.org/62226/). The gRNAs should be ordered as ssDNA and amplified with PCR. They should then be digested with SpeI and EcoRI and ligated with SpeI/EcoRI digested backbone and transformed.
 
 ## Input file structure
