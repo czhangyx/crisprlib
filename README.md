@@ -31,13 +31,20 @@ The file should only have two columns. The first column contains distinct names 
 
 ### References:
 Genome data source: [UCSC Genome Browser](https://genome.ucsc.edu)
-[Enabling AI in Synthetic Biology through Construction File Specification](https://doi.org/10.1101/2023.06.28.546630)
+
+[Enabling AI in Synthetic Biology through Construction File Specification](https://doi.org/10.1101/2023.06.28.546630)\n
 [DNA targeting specificity of RNA-guided Cas9 nucleases](https://doi.org/10.1038/nbt.2647)
+
 [In vivo genome editing using Staphylococcus aureus Cas9](https://doi.org/10.1038/nature14299)
+
 [Cpf1 Is a Single RNA-Guided Endonuclease of a Class 2 CRISPR-Cas System](https://doi.org/10.1016/j.cell.2015.09.038)
+
 [A Cas12a ortholog with stringent PAM recognition followed by low off-target editing rates for genome editing](https://doi.org/10.1186/s13059-020-01989-2)
+
 [Improvement of the LbCas12a-crRNA System for Efficient Gene Targeting in Tomato](https://doi.org/10.3389/fpls.2021.722552)
+
 [Structure-based design of gRNA for Cas13](https://doi.org/10.1038/s41598-020-68459-4)
+
 [Nucleic acid detection with CRISPR-Cas13a/C2c2](https://doi.org/10.1126/science.aam9321)
 
 Author: Yixin Zhang
