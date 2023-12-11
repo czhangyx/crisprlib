@@ -3,8 +3,7 @@
 ## Usage
 This program generates gRNAs, appropriate primers, and experiment procedures for CRISPR-related projects. The program prompts user for the CRISPR/Cas systems, genome, and experiment. Upon request, the program outputs a table of gRNA sequences in the selected destination folder. The program then outputs a table of primers required to execute experiments, as well as human-readable and json [construction files](https://doi.org/10.1101/2023.06.28.546630).
 
-To execute the program, navigate to the crisprlib directory on your terminal and enter the following command:
-```python crisprlib.py```
+To execute the program, navigate to the crisprlib directory on your terminal and enter ```python crisprlib.py```.
 You can then follow the instructions in the program.
 
 ### Supported CRISPR/Cas systems:
@@ -40,5 +39,5 @@ Genome data source: [UCSC Genome Browser](https://genome.ucsc.edu)
 [Structure-based design of gRNA for Cas13](https://doi.org/10.1038/s41598-020-68459-4)  
 [Nucleic acid detection with CRISPR-Cas13a/C2c2](https://doi.org/10.1126/science.aam9321)  
 
-Author: Yixin Zhang
+Author: Yixin Zhang  
 To report bugs, please send an email to czhangyx@berkeley.edu.
