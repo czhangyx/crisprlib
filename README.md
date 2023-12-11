@@ -28,6 +28,8 @@ The construction file outlines a set of experiments based on [this plasmid](http
 Accepted file formats: .csv, .txt, .xlsx, .xls, .xlsm, .xlsb, .odf, .ods, .odt
 The file should only have two columns. The first column contains distinct names of the genes, and the second column contains gene sequences or genomic coordinates. Gene sequences should be at least 30 nucleotides long and should only include A/T/C/G. Your data should be free of space, punctuations, and other irrelevant characters. There should be a header row in the file.
 
+Test files are generated with Google random number generator.
+
 ### References:
 Genome data source: [UCSC Genome Browser](https://genome.ucsc.edu)  
 [Enabling AI in Synthetic Biology through Construction File Specification](https://doi.org/10.1101/2023.06.28.546630)  

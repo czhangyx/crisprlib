@@ -129,8 +129,7 @@ Otherwise, press control+D simultaneously to quit the program.""")
             # Handle Ctrl+C and Ctrl+D
             print("\nYou have successfully quitted. Thank you for using the program.\n")
             sys.exit(0)
-    
-    '''
+
     except:
         # Handle crashes
         print("""\n************************************************************************
@@ -138,4 +137,3 @@ The program crashed due to an unexpected error. Apologies for your inconvenience
 If you wish to report the bug, please contact czhangyx@berkeley.edu.
 ************************************************************************n""")
         sys.exit(0)
-    '''
