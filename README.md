@@ -28,7 +28,8 @@ The construction file outlines a set of experiments based on [this plasmid](http
 Accepted file formats: .csv, .txt, .xlsx, .xls, .xlsm, .xlsb, .odf, .ods, .odt
 The file should only have two columns. The first column contains distinct names of the genes, and the second column contains gene sequences or genomic coordinates. Gene sequences should be at least 30 nucleotides long and should only include A/T/C/G. Your data should be free of space, punctuations, and other irrelevant characters. There should be a header row in the file.
 
-Test files are generated with Google random number generator.
+## Testing
+Test files are generated with Google random number generator. To test the program, simply run the program as instructed unse "How to use" and upload test files to the program when prompted.
 
 ### References:
 Genome data source: [UCSC Genome Browser](https://genome.ucsc.edu)  
